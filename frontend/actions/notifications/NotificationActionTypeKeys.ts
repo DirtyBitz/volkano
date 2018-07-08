@@ -1,6 +1,0 @@
-enum NotificationActionTypeKeys {
-  ADD_NOTIFICATION = 'NOTIFICATIONS/ADD_NOTIFICATION',
-  REMOVE_NOTIFICATION = 'NOTIFICATIONS/REMOVE_NOTIFICATION',
-}
-
-export { NotificationActionTypeKeys }
