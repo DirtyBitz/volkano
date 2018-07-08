@@ -15,4 +15,8 @@ class User < ApplicationRecord
   validates :nickname, uniqueness: true,
                        allow_blank: true,
                        format: { without: /@/ }
+
+  def as_json(options = {})
+    super({ only: %i[email nickname] }.merge(options))
+  end
 end
