@@ -1,6 +1,3 @@
-[![pipeline status](https://inf2900v18.cs.uit.no/team4/volkano/badges/development/pipeline.svg)](https://inf2900v18.cs.uit.no/team4/volkano/commits/development)
-[![total test coverage](https://inf2900v18.cs.uit.no/team4/volkano/badges/development/coverage.svg)](https://inf2900v18.cs.uit.no/team4/volkano/commits/development)
-
 # Setup
 
 ## External services
@@ -8,17 +5,7 @@
 1.  [Install docker](https://docs.docker.com/engine/installation/)
 2.  Run all external services in the background with `docker-compose up -d`
 
-## The frontend
-
-All of these commands are run in the `frontend` directory
-
-1.  [Install yarn](https://yarnpkg.com/lang/en/docs/install/)
-2.  Run `yarn install` to install all packages
-3.  Run `yarn dev` to start the development server
-
 ## The backend
-
-All of these commands are run in the `backend` directory
 
 1.  [Install rvm](https://rvm.io/) to manage your Ruby binaries
 2.  Run `rvm install "ruby-2.5.0"` to get the newest version of Ruby
@@ -28,15 +15,13 @@ All of these commands are run in the `backend` directory
 
 # Usage
 
-All `yarn` commands must be run from the `frontend` directory and all `rails` commands must be run in the `backend` directory.
-
 You can examine the database with `psql -h 0.0.0.0 -U postgres` or by running `rails dbconsole`. Emails can be sent to `smtp://localhost:1025` and read at [`http://localhost:1080`](http://localhost:1080).
 
 ## Tests
 
 ## Running in production mode
 
-* Set the following environment variables:
+- Set the following environment variables:
 
   |              Name | Explanation                                      |
   | ----------------: | :----------------------------------------------- |
@@ -48,39 +33,30 @@ You can examine the database with `psql -h 0.0.0.0 -U postgres` or by running `r
   |  BACKEND_HOSTNAME | The host where the frontend can find the backend |
   |        SENTRY_DSN | (_optional_) DSN for Sentry integration          |
 
-* Run `yarn start` to build all pages and start the production server
-* Run `rails s -e production` to start the rails server in production mode
-* Visit [`http://localhost:3000/`](http://localhost:3000/) in your browser (if you set PORT to 3000)
+- Run `rails s -e production` to start the rails server in production mode
+- You can now run requests against `localhost:5000`
 
 ### Continuous
 
-* The frontend tests can be run in watch mode with `yarn test`
-* The backend tests can be run in watch mode with the `guard` command in the `backend` directory
-* The acceptance tests can be run in watch mode with the `yarn cypen`
+- Tests can be run in watch mode with the `guard` command
 
 ### One time
 
-* The frontend tests can be run with `yarn quicktest` or `yarn ci` to generate coverage
-* The backend tests can be run with `rspec`
-* The acceptance tests can be run with `yarn cyprun`
+- Tests can be run with `rspec`
 
 # Development
 
 ## Initialize git hooks
 
-* Run `./init_hooks` in the root folder to set up pre-commit and commit-message hooks
+- Run `./init_hooks` in the root folder to set up pre-commit and commit-message hooks
 
 ## Recommended VSCode plugins
 
-### Prettier
-
-* Automatic code formatting for JavaScript and JSON
-
 ### ruby-rubocop
 
-* Lints and autocorrects ruby code
+- Lints and autocorrects ruby code
 
 ### Ruby Solargraph
 
-* IntelliSense for ruby
-* NB! First you must do `gem install solargraph`
+- IntelliSense for ruby
+- NB! First you must do `gem install solargraph`
